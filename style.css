@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #007BFF; /* Синій фон */
+    overflow: hidden; /* Сховати прокрутку */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    color: white; /* Білий текст */
+}
+
+.whale {
+    position: absolute;
+    width: 100px; /* Ширина кита */
+    height: auto;
+    animation: jump 1s ease-in-out infinite; /* Анімація стрибка */
+    pointer-events: auto; /* Ігнорування кліків на китах */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0); /* Вихідна позиція */
+    }
+    50% {
+        transform: translateY(-50px); /* Стрибок вгору */
+    }
+}
+
+.catch-animation {
+    animation: caught 0.5s forwards; /* Анімація при ловлі */
+}
+
+@keyframes caught {
+    transform: scale(1.5); /* Збільшення при ловлі */
+    opacity: 0; /* Зникнення */
+}
